@@ -24,7 +24,8 @@ model = WideDeep(
 
 
 # 损失函数和优化器
-criterion = nn.BCELoss()
+# criterion = nn.BCELoss()
+criterion = nn.BCEWithLogitsLoss()
 optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
 # 混合精度训练（可选，加速GPU训练）
 scaler = GradScaler() if torch.cuda.is_available() else None

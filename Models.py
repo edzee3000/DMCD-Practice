@@ -51,5 +51,7 @@ class WideDeep(nn.Module):
         
         # 融合两个分支
         total_out = wide_out + deep_out
-        pred = self.sigmoid(total_out)
-        return pred.squeeze()
+        # pred = self.sigmoid(total_out)
+        # return pred.squeeze()
+        # 移除sigmoid，直接返回logits
+        return total_out.squeeze()  # 不再应用sigmoid

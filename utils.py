@@ -17,8 +17,8 @@ warnings.filterwarnings('ignore')
 # 设备配置
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # 训练参数
-STREAM_BATCH_SIZE = 131072  # 流式读取TXT的批次大小（可根据内存调整）
-TRAIN_BATCH_SIZE = 1024      # 模型训练批次大小
+STREAM_BATCH_SIZE = 524288  # 流式读取TXT的批次大小（可根据内存调整）
+TRAIN_BATCH_SIZE = 8192      # 模型训练批次大小
 EPOCHS = 5                 # 训练轮数
 LEARNING_RATE = 0.001      # 学习率
 # 定义字典保存路径（建议统一放在data_cache目录）
